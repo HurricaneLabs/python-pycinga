@@ -1,0 +1,22 @@
+## 1.0.0 (pycinga)
+
+  - Forked pycinga from pynagios
+
+## 0.2.0 (unreleased)
+
+  - Upgraded to argparse since optparse is deprecated.
+
+## 0.1.2-dev
+
+  - Default timeout to None. This allows the plugin to differentiate
+    from a lack of a timeout given to a 0 timeout.
+  - Ranges with more than two parts are invalid. [GH-1]
+
+## 0.1.1 (August 1, 2011)
+
+  - Default `host` to None
+  - Default `timeout` to 0
+
+## 0.1.0 (July 28, 2011)
+
+  - Initial release
