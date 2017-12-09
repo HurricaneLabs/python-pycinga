@@ -1,5 +1,5 @@
-Pycinga
-========
+Pycinga |Docs| |Build Status| |codecov.io|
+==========================================
 
 Pycinga is a simple Python library meant to make writing
 `Icinga <http://www.icinga.com/>`_ plugins much easier. Icinga
@@ -66,3 +66,12 @@ guidelines-compliant Python-based Icinga plugin::
 While the above example subclasses ``Plugin``, you're of course welcome
 to simply call `Plugin`s methods directly and build a ``Response``
 yourself.
+
+
+.. |Docs| image:: https://readthedocs.org/projects/pycinga/badge/?version=latest
+    :target: http://pycinga.readthedocs.io/en/latest/?badge=latest
+    :alt: Documentation Status
+.. |Build Status| image:: https://travis-ci.org/HurricaneLabs/python-pycinga.svg?branch=master
+    :target: https://travis-ci.org/HurricaneLabs/python-pycinga
+.. |codecov.io| image:: https://codecov.io/gh/HurricaneLabs/python-pycinga/branch/master/graph/badge.svg
+    :target: https://codecov.io/gh/HurricaneLabs/python-pycinga
