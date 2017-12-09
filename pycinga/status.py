@@ -19,8 +19,10 @@ class Status(object):
         statuses are exported from ``pycinga``.
         """
 
-        assert isinstance(exit_code, int)
-        assert isinstance(name, str)
+        if not isinstance(exit_code, int):
+            raise ValueError("exit_code must be an int, not %s" % type(exit_code))
+        if not isinstance(name, str):
+            raise ValueError("name must be a str, not %s" % type(exit_code))
 
         self.name = name
         self.exit_code = exit_code
