@@ -4,7 +4,6 @@ class which encapsulates a single plugin. This is the class
 which should be subclassed when creating new plugins.
 """
 
-import sys
 from argparse import ArgumentError, ArgumentParser
 from copy import copy
 
@@ -88,8 +87,15 @@ class Plugin(with_metaclass(PluginMeta, object)):
     # TODO: Still missing version
 
     responses = []
+    _options = None
 
-    def __init__(self, args=sys.argv):
+    @property
+    def options(self):
+        if self._options is None:
+            self._options = self._option_parser.parse_args(self.args)
+        return self._options
+
+    def __init__(self, args=None):
         """
         Instantiates a plugin, setting up the options and arguments state.
         Initialization by itself shouldn't do much, since the plugin should run
@@ -127,7 +133,7 @@ class Plugin(with_metaclass(PluginMeta, object)):
         argument being available in ``options.your_name``.
         """
         # Parse the given arguments to set the options
-        self.options = self._option_parser.parse_args(args)
+        self.args = args
 
     def check(self):
         """

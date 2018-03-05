@@ -41,7 +41,8 @@ class TestPlugin(object):
         """
         # Update the argv in-place since the default arguments
         # are evaluated at "compile" time of Python
-        del sys.argv[:]
+        if len(sys.argv) > 1:
+            del sys.argv[1:]
         sys.argv.extend(["-H", "foo.com"])
 
         plugin = self.Klass()
