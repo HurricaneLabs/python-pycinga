@@ -58,7 +58,7 @@ guidelines-compliant Python-based Icinga plugin::
             response.set_perf_data("another metric", 27, "MB")
             return response
 
-    if __name__ == 'main':
+    if __name__ == '__main__':
         # Build the plugin instance and run it. This will also parse
         # command line arguments by default.
         UserCheck().check().exit()
